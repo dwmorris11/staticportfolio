@@ -6,22 +6,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dustin's Static Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@600&display=swap" rel="stylesheet">
     <script>
-
+        window.onload = function () {
+            const doorElement = document.getElementById('center-door');
+            const leftDoor = document.getElementById('left-door');
+            const behindDoor = document.getElementById('behind-door');
+            leftDoor.addEventListener('transitionend', function (event) {
+                doorElement.remove();
+                behindDoor.style.display = 'grid';
+            });
+        }
     </script>
 </head>
 
 <body>
-    <div class="center-door">
-        <div class="double-door">
-            <div class="door-opening">
-                <img src="./resources/leftdoor.png" class="left-door door" />
-            </div>
-            <div class="door-opening">
-                <img src="./resources/door.png" class="right-door door" />
+    <div id="main">
+        <div id="center-door" class="center-door">
+            <div class="double-door" id="double-door">
+                <img src="./resources/leftdoor.png" class="left-door door" id="left-door" />
+                <img src="./resources/door.png" class="right-door door" id="right-door" />
             </div>
         </div>
-    </div>
+        <div id="behind-door">
+            <div id="bubble" class="bubble">
+                <img src="./resources/bubble.svg" id="bubble-photo" class="bubble" />
+                <p id="bubble-text">Woof!, I am Tulip. The cutest puppy in the world. Let me tell you about the greatest
+                    human alive.
+                    My human: Dustin Morris!
+                </p>
+            </div>
+            <div id="tulip" class="tulip">
+                <img src="./resources/TulipOnly.png" class="tulip" id="tulip-photo" />
+            </div>
+
+        </div>
     </div>
 </body>
 

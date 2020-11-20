@@ -2,31 +2,23 @@ body {
     background-color: #333;
 }
 
-.door-opening {
-    background-color: #333;
-    position: relative;
-    width: 100vh;
-    height: 100vh;
-    margin: 0 auto;
-    margin-top: 50px;
+#main {
+    display: flex;
+    position: fixed;
+    top: 0px;
+    left: 0px;
 }
 
 .left-door {
     background-color: brown;
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    width: 100vh;
+    width: 50vw;
     height: 100vh;
     transform-origin: left;
 }
 
 .right-door {
     background-color: brown;
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    width: 100vh;
+    width: 50vw;
     height: 100vh;
     transform-origin: right;
 }
@@ -56,4 +48,43 @@ body {
     display: flex;
     position: relative;
     justify-content: center;
+    z-index: 5;
+}
+
+#behind-door {
+    display: none;
+    height: 100vh;
+    width: 100vw;
+    grid-template-columns: repeat(24, 1fr);
+    grid-template-rows: repeat(24, 1fr);
+    border: black solid 5px;
+}
+
+.tulip {
+    z-index: 4;
+    grid-area: 12/14/12/14;
+}
+
+#bubble {
+    display: inline-block;
+    grid-area: 2/6/4/12;
+    height: 100vh;
+    width: 50vw;
+    transform: rotate(0deg);
+}
+
+#bubble-photo {
+    z-index: 3;
+    width: 75%;
+    height: 75%;
+}
+
+#bubble-text {
+    position: fixed;
+    top: 5%;
+    left: 20%;
+    z-index: 4;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 2rem;
+    width: 40%;
 }
