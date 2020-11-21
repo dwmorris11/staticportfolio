@@ -88,3 +88,20 @@ body {
     font-size: 2rem;
     width: 40%;
 }
+
+#name {
+    color: green;
+    font-weight: 300;
+}
+
+@keyframes boat {
+    from {
+        left: -200px;
+    }
+
+    to {
+        left: 1200px;
+        overflow: hidden;
+        display: none;
+    }
+}
